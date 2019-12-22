@@ -17,10 +17,10 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recipes = this.recipeService.getRecipes();
-  }
-
-  recipeSelected(recipe: Recipe) {
-    this.recipeItemSelected = recipe;
+     this.recipeService.recipeSelected.subscribe(
+      (recipe: Recipe) => {
+            this.recipeItemSelected = recipe;
+      }
+    );
   }
 }
