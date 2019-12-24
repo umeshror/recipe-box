@@ -73,8 +73,10 @@
 
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">
-                x {{ i }}
+              <button class="btn btn-danger"
+                      type="button"
+                      (click)="deleteIngredient(i)">
+                x
               </button>
             </div>
           </div>
