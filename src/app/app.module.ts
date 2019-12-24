@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {Routes} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from "./header/header.component";
@@ -14,8 +13,8 @@ import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
 import {AppRoutingModule} from "./app-routing.module";
-import { RecipeLandingComponent } from './recipes/recipe-landing/recipe-landing.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import {RecipeLandingComponent} from './recipes/recipe-landing/recipe-landing.component';
+import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -35,6 +34,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
 
   ],
