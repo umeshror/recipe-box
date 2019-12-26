@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {AuthService} from "./auth.service";
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -8,9 +9,10 @@ import {AuthService} from "./auth.service";
 })
 export class AuthComponent {
   isLoginMode = true;
+  isLoading = false;
+  error: string = null;
 
-  constructor(private authService: AuthService) {
-  }
+  constructor(private authService: AuthService) {}
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -22,10 +24,24 @@ export class AuthComponent {
     }
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signup(email, password).subscribe(
-      (responseData) => {
-        console.log(responseData);
-      });
+
+    this.isLoading = true;
+    if (this.isLoginMode) {
+      // ...
+    } else {
+      this.authService.signup(email, password).subscribe(
+        resData => {
+          console.log(resData);
+          this.isLoading = false;
+        },
+        errorMessage => {
+          console.log(errorMessage);
+          this.error = errorMessage;
+          this.isLoading = false;
+        }
+      );
+    }
+
     form.reset();
   }
 }
