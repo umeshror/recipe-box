@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {map, tap} from 'rxjs/operators';
 import {RecipeService} from "./recipe.service";
+import {Recipe} from "./recipe.model";
 
 @Injectable({providedIn: 'root'})
 export class RecipeApiService {
@@ -15,6 +17,24 @@ export class RecipeApiService {
         (response) => {
           console.log(response);
         }
+      );
+  }
+
+  fetchRecipes() {
+    return this.http
+      .get<Recipe[]>('https://recipe-box-610fd.firebaseio.com/recipes.json')
+      .pipe(
+        map(recipes => {
+          return recipes.map(recipe => {
+            return {
+              ...recipe,
+              ingredients: recipe.ingredients ? recipe.ingredients : []
+            };
+          });
+        }),
+        tap(recipes => {
+          this.recipeService.setRecipes(recipes);
+        })
       );
   }
 }

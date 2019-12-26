@@ -6,12 +6,16 @@ import {RecipeApiService} from "../recipes/recipe-api.service";
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  constructor(private recipeApiService: RecipeApiService){
+  constructor(private recipeApiService: RecipeApiService) {
 
   }
 
   saveData() {
     this.recipeApiService.saveRecipes();
+  }
+
+  fetchData() {
+    this.recipeApiService.fetchRecipes().subscribe();
   }
 
 }
