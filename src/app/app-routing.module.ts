@@ -7,19 +7,33 @@ import {RecipeLandingComponent} from "./recipes/recipe-landing/recipe-landing.co
 import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
 import {RecipesResolverService} from "./recipes/recipes-resolver.service";
 import {AuthComponent} from "./auth/auth.component";
+import {AuthGuard} from "./auth/auth.guard";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
   {
-    path: 'recipes', component: RecipesComponent, children: [
-      {path: '', component: RecipeLandingComponent},
+    path: 'recipes',
+    canActivate: [AuthGuard],
+    component: RecipesComponent,
+    children: [
       {
-        path: 'new', component: RecipeEditComponent, resolve: [RecipesResolverService]
+        path: '',
+        component: RecipeLandingComponent
       },
       {
-        path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]
+        path: 'new',
+        component: RecipeEditComponent,
+        resolve: [RecipesResolverService]
       },
-      {path: ':id/edit', component: RecipeEditComponent},
+      {
+        path: ':id',
+        component: RecipeDetailComponent,
+        resolve: [RecipesResolverService]
+      },
+      {
+        path: ':id/edit',
+        component: RecipeEditComponent
+      },
     ]
   },
   {path: 'shopping-list', component: ShoppingListComponent},
