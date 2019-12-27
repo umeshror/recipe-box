@@ -2,14 +2,13 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from "../auth/utils/auth.guard";
 import {RecipesComponent} from "./recipes.component";
-import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
 import {RecipesResolverService} from "./utils/recipes-resolver.service";
 import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
 import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
+import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
 
 
-let appRoutes: Routes;
-appRoutes = [
+const appRoutes: Routes = [
   {
     path: '',
     // path: 'recipes',
@@ -33,12 +32,11 @@ appRoutes = [
       {
         path: ':id/edit',
         component: RecipeEditComponent
-      },
+      }
     ]
   }
 
 ];
-
 
 @NgModule({
   imports: [
@@ -46,6 +44,6 @@ appRoutes = [
   ],
   exports: [RouterModule]
 })
-export class RecipeRoutingModule {
+export class RecipesRoutingModule {
 
 }

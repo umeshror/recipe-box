@@ -5,7 +5,7 @@ import {ShoppingListComponent} from './shopping-list.component';
 
 let appRoutes: Routes;
 appRoutes = [
-  {path: '', component: ShoppingListComponent},
+  {path: '', component: ShoppingListComponent}
 ];
 
 
@@ -18,3 +18,4 @@ appRoutes = [
 export class ShoppingListRoutingModule {
 
 }
+
