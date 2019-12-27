@@ -11,7 +11,8 @@ import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
 let appRoutes: Routes;
 appRoutes = [
   {
-    path: 'recipes',
+    path: '',
+    // path: 'recipes',
     canActivate: [AuthGuard],
     component: RecipesComponent,
     children: [
