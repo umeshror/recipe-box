@@ -3,8 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ShoppingListComponent} from './shopping-list.component';
 
 
-let appRoutes: Routes;
-appRoutes = [
+const appRoutes: Routes = [
   {path: '', component: ShoppingListComponent}
 ];
 
