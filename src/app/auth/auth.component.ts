@@ -1,6 +1,6 @@
 import {Component, ComponentFactoryResolver, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 import {AuthResponseData, AuthService} from './auth.service';
 import {PlaceholderDirective} from "../shared/placeholder/placeholder.directive";
@@ -15,6 +15,7 @@ export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+  private closeSub: Subscription;
   @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
 
   constructor(

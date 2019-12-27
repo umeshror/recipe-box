@@ -1,10 +1,13 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RecipesComponent} from "./recipes.component";
 import {RecipeListComponent} from "./recipe-list/recipe-list.component";
 import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
 import {RecipeItemComponent} from "./recipe-list/recipe-item/recipe-item.component";
-import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
 import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
 
 
 @NgModule({
@@ -13,15 +16,22 @@ import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    RecipeLandingComponent,
-    RecipeEditComponent],
+    RecipeEditComponent,
+    RecipeLandingComponent
+  ],
+  imports: [
+    RouterModule,
+    CommonModule,
+    ReactiveFormsModule
+  ],
   exports: [
     RecipesComponent,
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    RecipeLandingComponent,
-    RecipeEditComponent]
+    RecipeEditComponent,
+    RecipeLandingComponent
+  ]
 })
 export class RecipeModule {
 
