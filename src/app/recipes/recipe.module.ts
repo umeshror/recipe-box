@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {RecipesComponent} from "./recipes.component";
 import {RecipeListComponent} from "./recipe-list/recipe-list.component";
 import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
@@ -9,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
 import {RecipeRoutingModule} from "./recipe-routing.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import {RecipeRoutingModule} from "./recipe-routing.module";
   ],
   imports: [
     RouterModule,
-    CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     RecipeRoutingModule
   ]
