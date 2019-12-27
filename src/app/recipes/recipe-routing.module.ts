@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from "../auth/auth.guard";
 import {RecipesComponent} from "./recipes.component";
 import {RecipeLandingComponent} from "./recipe-landing/recipe-landing.component";
-import {RecipesResolverService} from "./recipes-resolver.service";
+import {RecipesResolverService} from "./utils/recipes-resolver.service";
 import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
 import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
 

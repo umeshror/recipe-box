@@ -5,7 +5,7 @@ import {RecipesComponent} from "./recipes/recipes.component";
 import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
 import {RecipeLandingComponent} from "./recipes/recipe-landing/recipe-landing.component";
 import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
-import {RecipesResolverService} from "./recipes/recipes-resolver.service";
+import {RecipesResolverService} from "./recipes/utils/recipes-resolver.service";
 import {AuthComponent} from "./auth/auth.component";
 import {AuthGuard} from "./auth/auth.guard";
 

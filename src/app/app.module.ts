@@ -9,7 +9,7 @@ import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
 import {AppRoutingModule} from "./app-routing.module";
-import {RecipeService} from "./recipes/recipe.service";
+import {RecipeService} from "./recipes/utils/recipe.service";
 import {AuthComponent} from './auth/auth.component';
 import {LoadingSpinnerComponent} from './shared/loading-spinner/loading-spinner.component';
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
